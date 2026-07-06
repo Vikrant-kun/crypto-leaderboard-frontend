@@ -1,36 +1,280 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Crypto Leaderboard Frontend
 
-## Getting Started
+A modern real-time cryptocurrency leaderboard built with **Next.js**, **React**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and **WebSockets**.
 
-First, run the development server:
+This frontend consumes a high-performance Go backend that streams live leaderboard updates through WebSockets while maintaining persistent rankings with Redis and PostgreSQL.
+
+The application focuses on smooth UI interactions, animated ranking updates, responsive layouts, and real-time visualization of player activity.
+
+---
+
+## ✨ Features
+
+### ⚡ Real-Time Updates
+
+- Live leaderboard synchronization using WebSockets
+- Automatic updates without page refresh
+- Connection status indicator
+- Instant score changes across all connected clients
+
+---
+
+### 🏆 Animated Podium
+
+- Dedicated podium for Top 3 players
+- Dynamic player avatars
+- Animated score counters
+- Rank-specific styling
+- Floating motion effects
+- Smooth transitions when rankings change
+
+---
+
+### 📊 Live Leaderboard
+
+- Displays complete player rankings
+- Animated list updates
+- Responsive player cards
+- Rank badges
+- Live score changes
+- Glassmorphism design
+
+---
+
+### 📡 Live Activity Feed
+
+Real-time event stream displaying:
+
+- Player score increases
+- Recently updated players
+- Smooth entry animations
+- Automatic feed trimming
+- Live status indicator
+
+---
+
+### 🎨 Modern UI
+
+- Glassmorphism interface
+- Gradient backgrounds
+- Soft glow effects
+- Responsive layout
+- Smooth Framer Motion animations
+- Dark theme
+
+---
+
+## 🛠 Tech Stack
+
+| Technology | Purpose |
+|------------|----------|
+| Next.js 16 | React Framework |
+| React 19 | UI Library |
+| TypeScript | Static Typing |
+| Tailwind CSS | Styling |
+| Framer Motion | Animations |
+| Lucide React | Icons |
+| WebSockets | Real-time Communication |
+
+---
+
+## 📁 Project Structure
+
+```
+components/
+│
+├── ActivityFeed.tsx
+├── Avatar.tsx
+├── Background.tsx
+├── Dashboard.tsx
+├── LeaderBoard.tsx
+├── PlayerRow.tsx
+├── Podium.tsx
+└── types.ts
+
+app/
+│
+├── page.tsx
+├── globals.css
+└── layout.tsx
+```
+
+---
+
+## 🖥 Screenshots
+
+### Leaderboard
+
+> *(Add screenshot here)*
+
+---
+
+### Live Activity Feed
+
+> *(Add screenshot here)*
+
+---
+
+## ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/crypto-leaderboard-frontend.git
+```
+
+Move into the project
+
+```bash
+cd crypto-leaderboard-frontend
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will run on
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🔌 Backend Requirement
 
-To learn more about Next.js, take a look at the following resources:
+This project requires the companion backend to be running.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Default API endpoints:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+REST API
 
-## Deploy on Vercel
+http://localhost:8080/api/leaderboard
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+WebSocket
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ws://localhost:8080/ws/leaderboard
+```
+
+Backend Repository
+
+```
+(Add backend repository link here)
+```
+
+---
+
+## 🔄 Data Flow
+
+```
+Backend
+     │
+     │ REST
+     ▼
+Initial Leaderboard
+
+Backend
+     │
+     │ WebSocket
+     ▼
+Live Score Updates
+     │
+     ▼
+React State
+     │
+     ▼
+Animated UI
+```
+
+---
+
+## 📡 WebSocket Events
+
+### Leaderboard Update
+
+```json
+{
+  "type": "leaderboard",
+  "data": [
+    {
+      "id": "user_01",
+      "username": "Alice_BTC",
+      "score": 15420,
+      "rank": 1
+    }
+  ]
+}
+```
+
+---
+
+### Activity Event
+
+```json
+{
+  "type": "activity",
+  "data": {
+    "username": "Alice_BTC",
+    "gain": 50,
+    "time": "Just now"
+  }
+}
+```
+
+---
+
+## 🎯 Design Goals
+
+The interface was designed with three primary objectives:
+
+- Provide instant visual feedback for live score changes.
+- Maintain smooth animations even during continuous updates.
+- Present leaderboard information in a clean, modern dashboard layout.
+
+---
+
+## 🚀 Future Improvements
+
+- Player profile pages
+- Search players
+- Historical score charts
+- Pagination
+- Theme switcher
+- Authentication
+- Multiple leaderboards
+- Tournament mode
+- Mobile optimizations
+- Sound notifications
+
+---
+
+## 📄 License
+
+This project is released under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Vikrant**
+
+GitHub
+
+https://github.com/Vikrant-kun
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
