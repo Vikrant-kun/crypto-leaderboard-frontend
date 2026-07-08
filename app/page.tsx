@@ -22,9 +22,7 @@ const [activities, setActivities] = useState<Activity[]>([]);
 
             try {
 
-                const res = await fetch(
-                    "http://localhost:8080/api/leaderboard"
-                );
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/leaderboard`);
 
                 const data: Player[] = await res.json();
 
@@ -41,8 +39,8 @@ const [activities, setActivities] = useState<Activity[]>([]);
         loadLeaderboard();
 
         const ws = new WebSocket(
-            "ws://localhost:8080/ws/leaderboard"
-        );
+    `${process.env.NEXT_PUBLIC_WS_URL}/ws/leaderboard`
+);
 
         ws.onopen = () => setStatus("connected");
 
