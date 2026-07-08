@@ -40,7 +40,7 @@ export default function Dashboard() {
   return (
     <main className="min-h-screen bg-slate-950 px-8 py-10">
       <div className="mx-auto grid max-w-7xl gap-8 xl:grid-cols-[2fr_420px]">
-        <LeaderBoard/>
+
 
         <div className="sticky top-10 h-fit">
           <ActivityFeed activities={demoActivities} />
