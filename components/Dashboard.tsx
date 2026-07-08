@@ -1,6 +1,6 @@
 "use client";
 
-import Leaderboard from "./Leaderboard";
+import Leaderboard from "./LeaderBoard";
 import ActivityFeed from "./ActivityFeed";
 
 const demoActivities = [
