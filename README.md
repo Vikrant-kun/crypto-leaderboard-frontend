@@ -105,13 +105,17 @@ app/
 
 ### Leaderboard
 
-> *(Add screenshot here)*
+<p align="center">
+  <img width="600" alt="Live leaderboard updates" src="https://github.com/user-attachments/assets/756cb820-3bf8-4ec5-b23c-8387fe539d4f" />
+</p>
 
 ---
 
 ### Live Activity Feed
 
-> *(Add screenshot here)*
+<p align="center">
+  <img width="320" alt="Live activity feed" src="https://github.com/user-attachments/assets/25cbccdb-7b62-4552-acc2-863ce0f9e2e5" />
+</p>
 
 ---
 
